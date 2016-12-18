@@ -1,4 +1,5 @@
 #!/bin/bash
 
-dnf config-manager --add-repo=http://download.opensuse.org/repositories/home:Horst3180/Fedora_$(cat /etc/fedora-release | grep -o "[0-9]*")/home:Horst3180.repo
-dnf -y install arc-theme
+git clone https://github.com/horst3180/arc-icon-theme --depth 1 && cd arc-icon-theme
+./autogen.sh --prefix=/usr
+sudo make install
